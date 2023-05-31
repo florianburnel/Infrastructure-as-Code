@@ -62,14 +62,7 @@ build {
   provisioner "windows-restart" {
     restart_timeout = "10m"
   }
-
-  // SYSPREP
-  //provisioner "powershell" {
-  //  elevated_user     = "Administrateur"
-  //  elevated_password = "P@ssword!"    
-  //  script = "${path.root}/setup/prepare-sysprep.ps1"
-  //}    
-  
+ 
   // Export sous la forme d'une box Vagrant
   post-processor "vagrant" {
 	keep_input_artifact = false
