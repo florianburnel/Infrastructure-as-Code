@@ -1,0 +1,10 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "packer_WS2022_vmware.box"
+  config.vm.communicator = "winrm"
+  # Vagrant n'a plus besoin du plugin WinRM (c'est natif)
+  config.winrm.username = "Administrateur"
+  config.winrm.password = "P@ssword!"
+  config.vm.provider "vmware_workstation" do |vmware|
+    vmware.gui = true
+  end
+end
